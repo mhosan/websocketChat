@@ -1,0 +1,37 @@
+[
+  {
+    "title": "Gardel",
+    "author": "Felipe Pigna",
+    "price": 13.99,
+    "thumbnail": "https://planetadelibroscom.cdnstatics2.com/usuaris/libros/fotos/350/original/portada_gardel_felipe-pigna_202203301151.jpg",
+    "id": 1
+  },
+  {
+    "title": "El nombre de la rosa",
+    "author": "Umberto Eco",
+    "price": 12.99,
+    "thumbnail": "https://planetadelibroscom.cdnstatics2.com/usuaris/libros/fotos/350/original/portada_el-nombre-de-la-rosa_umberto-eco_202203301151.jpg",
+    "id": 2
+  },
+  {
+    "title": "El amor en los tiempos del cólera",
+    "author": "Gabriel García Márquez",
+    "price": 12.99,
+    "thumbnail": "https://planetadelibroscom.cdnstatics2.com/usuaris/libros/fotos/350/original/portada_el-amor-en-los-tiempos-del-colera_gabriel-garcia-marquez_202203301151.jpg",
+    "id": 3
+  },
+  {
+    "title": "Las hogueras del rey",
+    "author": "Pedro Casals",
+    "price": 15.99,
+    "thumbnail": "https://planetadelibroscom.cdnstatics2.com/usuaris/libros/fotos/354/original/portada_las-hogueras-del-rey_pedro-casals_202203281030.jpg",
+    "id": 4
+  },
+  {
+    "title": "Titanes",
+    "author": "Juan Rulfo",
+    "price": 12.99,
+    "thumbnail": "https://planetadelibroscom.cdnstatics2.com/usuaris/libros/fotos/350/original/portada_titanes_juan-rulfo_202203301151.jpg",
+    "id": 5
+  }
+]
