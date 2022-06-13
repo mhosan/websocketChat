@@ -7,15 +7,18 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="" method="get">
-        <input type="text" name="name" placeholder="name">
-        <input type="text" name="age" placeholder="age">
+    <form action="/api/personas" method="POST">
+        <input type="text" name="nombre" placeholder="nombre">
+        <input type="text" name="apellido" placeholder="apellido">
+        <input type="number" name="edad" placeholder="edad">
         <input type="submit" value="submit">
     </form>
-    <form action="" method="get">
-        <input type="text" name="name" placeholder="name">
-        <input type="text" name="age" placeholder="age">
+    <form action="/api/mascotas" method="POST">
+        <input type="text" name="nombre" placeholder="nombre">
+        <input type="text" name="raza" placeholder="raza">
+        <input type="number" name="edad" placeholder="edad">
         <input type="submit" value="submit">
     </form>
+  
 </body>
 </html>
