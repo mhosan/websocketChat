@@ -13,7 +13,6 @@ const server = app.listen(port, () => {
 );
 server.on("error", error => { console.log(error) });
 
-const version = "15";
 app.use(express.static("public"));
 app.use('/api', router);
 

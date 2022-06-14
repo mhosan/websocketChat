@@ -5,13 +5,13 @@ const path = require('path');
 const productos = [];
 
 router.get('/productos', (req, res) => {
-    console.log('GET /productos respondiendo');
+    console.log('GET /de productos respondiendo');
     res.json(productos);
 }
 );
 
 router.get('/productos/:id', (req, res) => {
-    console.log('GET /productos por id respondiendo');
+    console.log('GET /de productos por id respondiendo');
     const id = req.params.id;
     const producto = productos.find(p => p.id === Number(id));
     res.json(producto);
