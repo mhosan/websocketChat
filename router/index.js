@@ -19,7 +19,7 @@ router.get('/productos/:id', (req, res) => {
 );
 
 router.post('/productos', (req, res) => {
-    console.log('POST /api/users respondiendo');
+    console.log('POST /api/users respondiendo con el usuario');
     if (Object.entries(req.body).length === 0) {
         res.status(400).json({ msg: 'No se recibieron datos' });
     } else {

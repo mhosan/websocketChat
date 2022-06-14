@@ -8,7 +8,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
 const server = app.listen(port, () => {
-    console.log(`Listening on port ${port}`);
+    console.log(`Escuchando en el puerto ${port}`);
 }
 );
 server.on("error", error => { console.log(error) });
