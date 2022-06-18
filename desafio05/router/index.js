@@ -8,6 +8,8 @@ const productos = [
     { title: "Sacapuntas", price: 225, thumbnail: "https://www.google.com/imgres?imgurl=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fd%2Fd0%2FSacapuntametalico.gif&imgrefurl=https%3A%2F%2Fes.wikipedia.org%2Fwiki%2FSacapuntas&tbnid=4CcjmUBuebj7aM&vet=12ahUKEwiLp6rX-7X4AhUfM7kGHfMlD4sQMygBegUIARDqAQ..i&docid=3JQLzAXlbP-_QM&w=400&h=366&q=sacapuntas&ved=2ahUKEwiLp6rX-7X4AhUfM7kGHfMlD4sQMygBegUIARDqAQ" }
 ];
 
+const champsArray= [{nombre :"Pepe"}, {nombre: "Juan"}, {nombre: "José"}, {nombre: "Pedro"}, {nombre:"María"}, {nombre:"Lucas"}];
+
 /* router.get('/productos', (req, res) => {
     console.log('GET /de productos respondiendo');
     res.json(productos);
@@ -22,7 +24,12 @@ router.get('/product/:indice', (req, res) => {
     res.render('products', productos[id]);
 }
 );
+router.get('/champs', (req, res) => {
+    console.log('GET /de champs por id respondiendo');
 
+    res.render('campeones', {champsArray, hasAny: true});
+}
+);
 /* router.post('/productos', (req, res) => {
     console.log('POST /api/users respondiendo con el usuario');
     if (Object.entries(req.body).length === 0) {
