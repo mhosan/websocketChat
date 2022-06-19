@@ -5,15 +5,10 @@ const path = require('path');
 const productosArray = [
     { nombre: "Lapiz", precio: 125, thumbnail: "https://cdn3.iconfinder.com/data/icons/education-209/64/pencil-pen-stationery-school-128.png" },
     { nombre: "Juego de reglas", precio: 80, thumbnail: "https://cdn3.iconfinder.com/data/icons/education-209/64/ruler-triangle-stationary-school-128.png" },
-    { nombre: "Calculadora", precio: 225, thumbnail: "https://cdn3.iconfinder.com/data/icons/education-209/64/calculator-math-tool-school-128.png" }
+    { nombre: "Calculadora", precio: 225, thumbnail: "https://cdn3.iconfinder.com/data/icons/education-209/64/calculator-math-tool-school-128.png" },
+    { nombre: "Mochila", precio: 345, thumbnail: "https://cdn-icons-png.flaticon.com/128/2333/2333041.png"},
+    { nombre: "Marcadores", precio: 234, thumbnail: "https://cdn-icons-png.flaticon.com/128/4697/4697386.png"}
 ];
-
-/* router.get('/productos', (req, res) => {
-    console.log('GET /de productos respondiendo');
-    res.json(productos);
-}
-);
- */
 
 /* router.get('/product/:indice', (req, res) => {
     console.log('GET /de productos por id respondiendo');
@@ -26,28 +21,22 @@ const productosArray = [
 */
 
 router.get('/', (req, res) => {
-    console.log('GET /de champs por id respondiendo');
+    console.log('Pagina inicial. Mostrar carga de productos');
     res.render('productos', {showProductos: false});
 }
 );
 
 router.get('/productos', (req, res) => {
-    console.log('GET /de champs por id respondiendo');
+    console.log('mostrar total de productos cargados');
     res.render('productos', {productosArray, showProductos: true});
 }
 );
 
 router.post('/productos', (req, res) => {
-    console.log('POST /api/users respondiendo con el usuario');
-    if (Object.entries(req.body).length === 0) {
-        //res.status(400).json({ msg: 'No se recibieron datos' });
-        //res.render('products');
-    } else {
+    console.log('POST para cargar productos');
         const { nombre, precio, thumbnail } = req.body;
         id = productosArray.length + 1;
         productosArray.push({ id, nombre, precio, thumbnail });
-        //res.json({ id, nombre, precio, thumbnail });
-    }
 });
  
 

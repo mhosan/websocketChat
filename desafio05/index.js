@@ -9,6 +9,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
 app.use(express.static("public"));
+//---------------------- engine configuration -------------------------
 app.engine('hbs', engine({
     extname: '.hbs',
     defaultLayout: path.join(__dirname, './views/layouts/main.hbs'),
@@ -17,6 +18,7 @@ app.engine('hbs', engine({
 }));
 app.set('views', path.join(__dirname, './views'));
 app.set('view engine', 'hbs');
+//---------------------- engine configuration -------------------------
 app.use('/', router);
 
 const server = app.listen(port, () => {
