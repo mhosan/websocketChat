@@ -3,9 +3,9 @@ const router = Router();
 const path = require('path');
 
 const productosArray = [
-    { nombre: "Lapiz", precio: 125, thumbnail: "" },
-    { nombre: "Goma de borrar", precio: 80, thumbnail: "" },
-    { nombre: "Sacapuntas", precio: 225, thumbnail: "" }
+    { nombre: "Lapiz", precio: 125, thumbnail: "https://cdn3.iconfinder.com/data/icons/education-209/64/pencil-pen-stationery-school-128.png" },
+    { nombre: "Juego de reglas", precio: 80, thumbnail: "https://cdn3.iconfinder.com/data/icons/education-209/64/ruler-triangle-stationary-school-128.png" },
+    { nombre: "Calculadora", precio: 225, thumbnail: "https://cdn3.iconfinder.com/data/icons/education-209/64/calculator-math-tool-school-128.png" }
 ];
 
 /* router.get('/productos', (req, res) => {
@@ -46,7 +46,7 @@ router.post('/productos', (req, res) => {
         const { nombre, precio, thumbnail } = req.body;
         id = productosArray.length + 1;
         productosArray.push({ id, nombre, precio, thumbnail });
-        res.json({ id, nombre, precio, thumbnail });
+        //res.json({ id, nombre, precio, thumbnail });
     }
 });
  
