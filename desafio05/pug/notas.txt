@@ -1,0 +1,1 @@
+falta formateo visual con bootstrap
