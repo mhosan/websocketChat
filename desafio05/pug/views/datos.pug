@@ -1,0 +1,25 @@
+extends main.pug    
+block datos
+    h1(style="color: blue;")=titulo   
+    h2(style=estilo) #{subtitulo}
+    if getAll
+        each item in productosArray
+            p=item.nombre
+            p=item.precio
+            img(src=item.thumbnail, alt=item.nombre)
+        button(onclick="move()") Ingresar datos de productos
+        script.
+            function move() {
+                window.location.href = 'http://localhost:8080'
+            }
+    else
+        form(method='POST' action='/productos') 
+            input(type='text', name='nombre', placeholder='Nombre')
+            input(type='text', name='precio', placeholder='Precio')
+            input(type='text', name='thumbnail', placeholder='Thumbnail')
+            input(type='submit', value='Enviar')
+        button(onclick="move()") Listar todos los productos
+        script.
+            function move() {
+                window.location.href = 'http://localhost:8080/productos'
+            }
