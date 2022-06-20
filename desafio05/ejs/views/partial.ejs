@@ -1,0 +1,23 @@
+<% if (getAll) { %>
+    <% productosArray.forEach(producto => { %>
+        <div>
+            <p><%= producto.nombre %></p>
+            <p><%= producto.precio %></p>
+            <img src="<%= producto.thumbnail %>" alt="<%= producto.nombre %>">
+        </div>   
+    <% }) %>
+    <a href="http://localhost:8080">
+        <input type="submit" value="Cargar productos" />
+    </a>
+<% } else { %>
+    <h1>Ingresar datos del producto</h1>
+    <form action="/productos" method="POST">
+        <input type="text" name="nombre" placeholder="nombre">
+        <input type="number" name="precio" placeholder="precio">
+        <input type="text" name="thumbnail" placeholder="url imagen">
+        <input type="submit" value="submit">
+    </form>
+    <a href="http://localhost:8080/productos">
+        <input type="submit" value="Vista de productos" />
+    </a>
+<% } %>
