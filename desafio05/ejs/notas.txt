@@ -1,4 +1,0 @@
-Instalar las extensiones:
-Ejs language support
-Ejs snippets
-
