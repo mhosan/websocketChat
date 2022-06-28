@@ -3,7 +3,7 @@ const router = Router();
 const path = require('path');
 const { routerController, routerControllerGetAll, routerControllerPost} = require('../controllers/rutasController');
 
-router.get('/', routerController);
+router.get('/form', routerController);
 
 router.get('/productos', routerControllerGetAll);
 
