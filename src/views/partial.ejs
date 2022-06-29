@@ -7,16 +7,19 @@
 </form>
 <!-- <a href="http://localhost:8080/productos">
     <input type="submit" value="Vista de productos" />
-</a> --><div class="row">
+</a> -->
+<div class="row mt-1 mx-1" style="width: 640px; height: 100px; overflow: auto; background-color: lightgrey;">
     <% productosArray.forEach(producto=> { %>
-        <div class="col">
-            <%= producto.nombre %>
-        </div>
-        <div class="col">
-            <%= producto.precio %>
-        </div class="col">
-        <div class="col">
-            <img src="<%= producto.thumbnail %>" alt="<%= producto.nombre %>" width="50">
+        <div class="row">
+            <div class="col">
+                <%= producto.nombre %>
+            </div>
+            <div class="col">
+                <%= producto.precio %>
+            </div>
+            <div class="col">
+                <img src="<%= producto.thumbnail %>" alt="<%= producto.nombre %>" width="50">
+            </div>
         </div>
         <% }) %>
 </div>
