@@ -15,12 +15,12 @@ app.set('views', path.join(__dirname, './views'));
 app.set('view engine', 'ejs');
 //---------------------- view engine configuration -------------------------
 app.use('/', router);
-
 const expressSserver = app.listen(port, () => {
     console.log(`Escuchando en el puerto ${port}`);
 }
 );
 expressSserver.on("error", error => { console.log(error) });
+
 
 const io = new IOServer(expressSserver);
 io.on('connection', (socket) => {

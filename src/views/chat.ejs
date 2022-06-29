@@ -1,0 +1,53 @@
+<!--  <div class="row mt-1 mx-1" style="width: 640px; height: 100px; overflow: auto; background-color: lightgrey;"></div> -->
+
+<div id="messagesPool">
+
+</div>
+<form id="messageForm" action="" class="mt-3">
+    <input id="userNameInput" type="text" placeholder="Nombre de usuario">
+    <input id="messageInput" type="text" placeholder="Mensaje">
+    <input type="submit" value="Enviar">
+</form>
+
+<script src="/socket.io/socket.io.js"></script>
+<!-- <script src="../../socket/cliente.socket.js"></script>  -->
+<script>
+    const socket = io();
+    const messageForm = document.querySelector('#messageForm');
+    const userNameInput = document.querySelector('#userNameInput');
+    const messageInput = document.querySelector('#messageInput');
+    const messagesPool = document.querySelector('#messagesPool');
+
+    function sendMessage(messageInfo) {
+        socket.emit('client:message', messageInfo);
+    };
+    function renderMessages(messagesInfo) {
+        messagesPool.innerHTML = '';
+        messagesInfo.forEach(messageInfo => {
+            const message = document.createElement('div');
+            message.classList.add('message');
+            message.innerHTML = `
+            <div class="message__user">
+            <strong>${messageInfo.userName}</strong>
+            <em>${messageInfo.message}</em>
+            </div>
+        `;
+            messagesPool.appendChild(message);
+        }
+        );
+    }
+
+    messageForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const messageInfo = {
+            userName: userNameInput.value,
+            message: messageInput.value
+        };
+        sendMessage(messageInfo);
+        //messageInput.value = '';
+    });
+
+    socket.on('server:message', renderMessages);
+
+
+</script>
