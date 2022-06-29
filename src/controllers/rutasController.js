@@ -7,6 +7,23 @@ const productosArray = [
     { nombre: "Marcadores", precio: 234, thumbnail: "https://cdn-icons-png.flaticon.com/128/4697/4697386.png"}
 ];
 
+const routerInitView = (req, res) =>{
+    console.log('Vista inicial');
+    try {
+        console.log('muestra formulario de carga');
+        res.render('main.ejs',{
+            titulo: 'Desafio 05',
+            estilo: 'color: red;',
+            subtitulo: 'Listado de productos',
+            productosArray,
+            getAll: false
+        });
+    } catch(error) {
+        res.status(500).json({ msg: `Error al cargar la página: ${error}` });
+    }
+
+};
+
 const routerController = (req, res) => {
     try {
         console.log('muestra formulario de carga');
@@ -50,6 +67,7 @@ const routerControllerPost = (req, res) => {
 }
 
 module.exports = { 
+    routerInitView,
     routerController,
     routerControllerGetAll,
     routerControllerPost

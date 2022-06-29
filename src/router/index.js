@@ -1,7 +1,9 @@
 const { Router } = require('express');
 const router = Router();
 const path = require('path');
-const { routerController, routerControllerGetAll, routerControllerPost} = require('../controllers/rutasController');
+const { routerInitView, routerController, routerControllerGetAll, routerControllerPost} = require('../controllers/rutasController');
+
+router.get('/', routerInitView);
 
 router.get('/form', routerController);
 
